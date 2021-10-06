@@ -20,6 +20,11 @@ class TesController extends Controller
         return view('index', ['data_voli' => $data ]);
     }
 
+    public function tes()
+    {
+        echo "ok";
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', [TesController::class, 'index'])->name('firstPage');
+Route::get('/tes', [TesController::class, 'tes']);
 Route::get('/detail/{id}', [TesController::class, 'detail']);
 Route::get('/edit/{id}', [TesController::class, 'edit'])->name('tambah');
 Route::post('/update/{id}', [TesController::class, 'update'])->name('update');
