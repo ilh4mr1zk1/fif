@@ -148,14 +148,14 @@
 	  	
 		  <tbody id="coba">
 		  	<?php $nomor = 1; ?>
-		  	@foreach( $data_voli as $fif )
+		  	@foreach( $data_transaksi as $fif )
 		  	<tr id="cb">
 		  		<td> {{ $nomor++ }} </td>
 		  		<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> {{ $fif->nama }} </a> </td>
 		  		<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> {{ $fif->nomer_kontrak }} </a> </td>
 		  		<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> {{ $fif->bayar }} </a> </td>
 		  		<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> {{ $fif->via }} </a> </td>
-		  		<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> {{ $fif->created_at }} </a> </td>
+		  		<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> {{ Carbon\Carbon::parse($fif->created_at)->format("d-m-Y H:i:s") }} </a> </td>
 				<td> <a href="javascript:void(0);" onclick="window.location = '/detail/{{$fif->id}}'" style="color: black;"> <img src="{{ url('foto/'.$fif->foto)}}" width="100px" height="100px"> </a> </td>
 
 				<td> 
@@ -195,7 +195,7 @@
 			$('.hps').click(function(i){
 				id = i.target.dataset.id;
 				Swal.fire({
-					title: 'Are you sure ? ',
+					title: `Are you sure want to delete ${id} ?` ,
 					text: "Deleted data cannot be reversed",
 					icon: 'warning',
 					showCancelButton: true,

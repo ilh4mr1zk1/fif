@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TesController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,9 @@ Route::get('/edit/{id}', [TesController::class, 'edit'])->name('tambah');
 Route::post('/update/{id}', [TesController::class, 'update'])->name('update');
 Route::delete('/hapus/{id}', [TesController::class, 'destroy'])->name('delete');
 Route::post('/create/fif', [TesController::class, 'simpan'])->name('simpan.aja');
+
+// Route Baru
+Route::get('/absen', [UserController::class, 'course'])->name('testPage');
+Route::post('ajaxRequest', [UserController::class, 'ajaxRequestPost'])->name('ajaxRequest.post');
+Route::get('/check', [UserController::class, 'check'])->name('checkData');
 

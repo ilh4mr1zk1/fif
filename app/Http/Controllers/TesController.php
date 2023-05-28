@@ -17,7 +17,7 @@ class TesController extends Controller
         //
         $data = PaymentFif::all();
 
-        return view('index', ['data_voli' => $data ]);
+        return view('index', ['data_transaksi' => $data ]);
     }
 
     public function tes()

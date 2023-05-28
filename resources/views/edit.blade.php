@@ -66,7 +66,7 @@
 			    <div class="form-group">
 			        <label for="created_at"> Transaction Date </label>
 			        <br>
-			        <input type="text" name="created_at" class="form-control" id="created_at" value="{{ $ambil_data->created_at }}">
+			        <input type="datetime" name="created_at" class="form-control" id="created_at" value="{{ Carbon\Carbon::parse($ambil_data->created_at)->format("d-m-Y H:i:s") }}">
 			    </div>
 
 			    <br>
